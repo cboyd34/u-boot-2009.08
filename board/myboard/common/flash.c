@@ -589,14 +589,14 @@ int write_buff (flash_info_t *info, uchar *src, ulong addr, ulong cnt)
 	if ((l = addr - wp) != 0) {
 		data = 0;
 		for (i=0, cp=wp; i<l; ++i, ++cp) {
-#ifdef CONFIG_MY3C44B0
+#ifdef CONFIG_MYS3C44B0
 			data = data | ((*(uchar *)cp)<<(8*i));
 #else
 			data = (data << 8) | (*(uchar *)cp);
 #endif
 		}
 		for (; i<4 && cnt>0; ++i) {
-#ifdef CONFIG_MY3C44B0
+#ifdef CONFIG_MYS3C44B0
 			data = data  | ((*src++)<<(8*i));
 #else
 			data = (data << 8) | *src++;
@@ -605,7 +605,7 @@ int write_buff (flash_info_t *info, uchar *src, ulong addr, ulong cnt)
 			++cp;
 		}
 		for (; cnt==0 && i<4; ++i, ++cp) {
-#ifdef CONFIG_MY3C44B0
+#ifdef CONFIG_MYS3C44B0
 			data = data | ((*(uchar *)cp)<<(8*i));
 #else
 			data = (data << 8) | (*(uchar *)cp);
@@ -623,7 +623,7 @@ int write_buff (flash_info_t *info, uchar *src, ulong addr, ulong cnt)
 	 */
 	while (cnt >= 4) {
 		data = 0;
-#ifdef CONFIG_MY3C44B0
+#ifdef CONFIG_MYS3C44B0
 		data = (*(ulong*)src);
 		src += 4;
 #else
@@ -647,7 +647,7 @@ int write_buff (flash_info_t *info, uchar *src, ulong addr, ulong cnt)
 	 */
 	data = 0;
 	for (i=0, cp=wp; i<4 && cnt>0; ++i, ++cp) {
-#ifdef CONFIG_MY3C44B0
+#ifdef CONFIG_MYS3C44B0
 		data = data  | ((*src++)<<(8*i));
 #else
 		data = (data << 8) | *src++;
@@ -655,7 +655,7 @@ int write_buff (flash_info_t *info, uchar *src, ulong addr, ulong cnt)
 		--cnt;
 	}
 	for (; i<4; ++i, ++cp) {
-#ifdef CONFIG_MY3C44B0
+#ifdef CONFIG_MYS3C44B0
 		data = data | ((*(uchar *)cp)<<(8*i));
 #else
 		data = (data << 8) | (*(uchar *)cp);

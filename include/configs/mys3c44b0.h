@@ -35,13 +35,13 @@
  * (easy to change)
  */
 #define CONFIG_ARM7			1	/* This is a ARM7 CPU	*/
-#define CONFIG_MY3C44B0		1	/* on an B2 Board      */
+#define CONFIG_MYS3C44B0	1	/* on an s3c44b0 Board      */
 #define CONFIG_ARM_THUMB	1	/* this is an ARM7TDMI */
 #undef  CONFIG_ARM7_REVD		/* disable ARM720 REV.D Workarounds */
 #define CONFIG_SYS_NO_CP15_CACHE
 #define CONFIG_ARCH_CPU_INIT
 
-#define CONFIG_S3C44B0_CLOCK_SPEED	64 /* we have a 75Mhz S3C44B0*/
+#define CONFIG_S3C44B0_CLOCK_SPEED	64 /* we have a 64Mhz S3C44B0*/
 
 
 #undef CONFIG_USE_IRQ			/* don't need them anymore */
