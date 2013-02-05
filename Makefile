@@ -3065,6 +3065,9 @@ voiceblue_config:	unconfig
 B2_config	:	unconfig
 	@$(MKCONFIG) $(@:_config=) arm s3c44b0 B2 dave
 
+mys3c44b0_config  :       unconfig
+	@./mkconfig $(@:_config=) arm s3c44b0 mys3c44b0 myboard
+
 #########################################################################
 ## ARM720T Systems
 #########################################################################
