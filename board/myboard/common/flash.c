@@ -151,10 +151,6 @@ void flash_print_info  (flash_info_t *info)
 				break;
 	case FLASH_SST160A:	printf ("SST39LF/VF160 (16 Mbit, uniform sector size)\n");
 				break;
-/*
-	case FLASH_SST3201:	printf ("SST39LF/VF320 (32 Mbit, uniform sector size)\n");
-				break;
-*/
 	case FLASH_STMW320DT:	printf ("M29W320DT (32 M, top sector)\n");
 				break;
 	default:		printf ("Unknown Chip Type\n");
@@ -343,12 +339,6 @@ static ulong flash_get_size (vu_long *addr, flash_info_t *info)
 		info->sector_count = 32;
 		info->size = 0x00200000;
 		break;				/* => 2 MB		*/
-	case (CONFIG_SYS_FLASH_WORD_SIZE)SST_ID_xF3201:
-//		info->flash_id += FLASH_SST3201;
-		info->flash_id += 0x005B;
-		info->sector_count = 64;
-		info->size = 0x00400000;
-		break;				/* => 4 MB		*/
 
 	default:
 		info->flash_id = FLASH_UNKNOWN;

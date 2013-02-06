@@ -182,8 +182,6 @@
  */
 #define CONFIG_ENV_IS_IN_FLASH	1	/* use flash for environment vars */
 #define CONFIG_ENV_OFFSET		0x0	/* environment starts at the beginning of the EEPROM */
-//#define CONFIG_ENV_ADDR (CONFIG_SYS_FLASH_BASE + 0x20000) /* environment start address */ 
-//#define CONFIG_ENV_SECT_SIZE 0x10000 /* Total Size of Environment Sector */
 
 /*-----------------------------------------------------------------------
  * I2C EEPROM (STM24C02W6) for environment
